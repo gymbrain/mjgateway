@@ -61,8 +61,8 @@ spring:
     password:
   r2dbc:
     url: r2dbc:postgresql://localhost:5432/gateway
-    username: gateway
-    password:
+    username: postgres
+    password: 90630690
   thymeleaf:
     cache: true
   sleuth:
