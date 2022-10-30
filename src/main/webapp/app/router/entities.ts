@@ -3,12 +3,72 @@ import { Authority } from '@/shared/security/authority';
 // prettier-ignore
 const Entities = () => import('@/entities/entities.vue');
 
+// prettier-ignore
+const Market = () => import('@/entities/base/market/market.vue');
+// prettier-ignore
+const MarketUpdate = () => import('@/entities/base/market/market-update.vue');
+// prettier-ignore
+const MarketDetails = () => import('@/entities/base/market/market-details.vue');
+// prettier-ignore
+const Candle = () => import('@/entities/base/candle/candle.vue');
+// prettier-ignore
+const CandleUpdate = () => import('@/entities/base/candle/candle-update.vue');
+// prettier-ignore
+const CandleDetails = () => import('@/entities/base/candle/candle-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default {
   path: '/',
   component: Entities,
   children: [
+    {
+      path: 'market',
+      name: 'Market',
+      component: Market,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'market/new',
+      name: 'MarketCreate',
+      component: MarketUpdate,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'market/:marketId/edit',
+      name: 'MarketEdit',
+      component: MarketUpdate,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'market/:marketId/view',
+      name: 'MarketView',
+      component: MarketDetails,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'candle',
+      name: 'Candle',
+      component: Candle,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'candle/new',
+      name: 'CandleCreate',
+      component: CandleUpdate,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'candle/:candleId/edit',
+      name: 'CandleEdit',
+      component: CandleUpdate,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'candle/:candleId/view',
+      name: 'CandleView',
+      component: CandleDetails,
+      meta: { authorities: [Authority.USER] },
+    },
     // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here
   ],
 };

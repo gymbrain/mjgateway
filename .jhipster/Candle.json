@@ -1,0 +1,58 @@
+{
+  "applications": "*",
+  "changelogDate": "20221030113138",
+  "clientRootFolder": "base",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "candle",
+  "fields": [
+    {
+      "fieldName": "timestampt",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "openPrice",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "closePrice",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "highPrice",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lowPrice",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "volume",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "transaction",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "timeType",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "base",
+  "name": "Candle",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "title",
+      "otherEntityName": "market",
+      "relationshipName": "market",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}
