@@ -15,6 +15,12 @@ const Candle = () => import('@/entities/base/candle/candle.vue');
 const CandleUpdate = () => import('@/entities/base/candle/candle-update.vue');
 // prettier-ignore
 const CandleDetails = () => import('@/entities/base/candle/candle-details.vue');
+// prettier-ignore
+const Currency = () => import('@/entities/base/currency/currency.vue');
+// prettier-ignore
+const CurrencyUpdate = () => import('@/entities/base/currency/currency-update.vue');
+// prettier-ignore
+const CurrencyDetails = () => import('@/entities/base/currency/currency-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default {
@@ -67,6 +73,30 @@ export default {
       path: 'candle/:candleId/view',
       name: 'CandleView',
       component: CandleDetails,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'currency',
+      name: 'Currency',
+      component: Currency,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'currency/new',
+      name: 'CurrencyCreate',
+      component: CurrencyUpdate,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'currency/:currencyId/edit',
+      name: 'CurrencyEdit',
+      component: CurrencyUpdate,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'currency/:currencyId/view',
+      name: 'CurrencyView',
+      component: CurrencyDetails,
       meta: { authorities: [Authority.USER] },
     },
     // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here
