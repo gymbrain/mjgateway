@@ -8,6 +8,10 @@
       <font-awesome-icon icon="asterisk" />
       <span>Candle</span>
     </b-dropdown-item>
+    <b-dropdown-item to="/currency">
+      <font-awesome-icon icon="asterisk" />
+      <span>Currency</span>
+    </b-dropdown-item>
     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
   </div>
 </template>
